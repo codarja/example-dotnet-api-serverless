@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: app
-          path: ./src/web-api-serverless/bin/Release/net6.0/
+          path: ./src/webapi-serverless/bin/Release/net6.0/
           
   deploy:
     needs: build
