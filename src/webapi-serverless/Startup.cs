@@ -9,14 +9,8 @@ namespace webapi_serverless;
 
 public class Startup
 {
-    #region [ Fields ]
-
     public readonly string ApiName;
     public readonly IConfiguration Configuration;
-
-    #endregion
-
-    #region [ Constructor ]
 
     public Startup(IWebHostEnvironment env, string apiName = "")
     {
@@ -30,10 +24,8 @@ public class Startup
 
         Configuration = builder.Build();
     }
-    #endregion
 
-    #region [ Public Methods ]
-    public void Configure(IApplicationBuilder app)
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         app.UseDeveloperExceptionPage();
 
@@ -57,9 +49,6 @@ public class Startup
 
         ConfigureServicesSwagger(services);
     }
-    #endregion
-
-    #region [ Private Methods ]
     
     private void ConfigureSwagger(IApplicationBuilder app)
     {
@@ -92,6 +81,4 @@ public class Startup
             catch { }
         });
     }
-
-    #endregion
 }
