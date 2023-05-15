@@ -3,9 +3,25 @@
   "Transform": "AWS::Serverless-2016-10-31",
   "Description": "An AWS Serverless Application.",
   "Resources": {
+    "ApiGateway": {
+      "Type": "AWS::Serverless::Api",
+      "Properties": {
+        "Name": {
+          "Fn::Sub": "example-dotnet-api-serverless-webapi"
+        },
+        "StageName": {
+          "Fn::Sub": "Prod"
+        },
+        "EndpointConfiguration": "EDGE"
+      }
+    },
+
     "WebApi": {
       "Type": "AWS::Serverless::Function",
       "Properties": {
+        "FunctionName": {
+          "Fn::Sub": "example-dotnet-api-serverless-webapi"
+        },
         "Handler": "webapi_serverless::webapi_serverless.Functions::FunctionHandlerAsync",
         "Runtime": "dotnet6",
         "CodeUri": "",
@@ -44,7 +60,7 @@
     "ApiURL": {
       "Description": "API endpoint URL for Prod environment",
       "Value": {
-        "Fn::Sub": "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+        "Fn::Sub": "https://${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
       }
     }
   }
