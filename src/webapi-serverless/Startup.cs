@@ -12,7 +12,7 @@ public class Startup
     public readonly string ApiName;
     public readonly IConfiguration Configuration;
 
-    public Startup(IWebHostEnvironment env, string apiName = "")
+    public Startup(IWebHostEnvironment env, string apiName = "example-dotnet-api-serverless")
     {
         ApiName = apiName;
 

@@ -7,7 +7,7 @@ public class Functions : Amazon.Lambda.AspNetCoreServer.APIGatewayProxyFunction
     protected override void Init(IWebHostBuilder builder)
     {
         builder
-            .UseStartup<Program>();
+            .UseStartup<Startup>();
     }
 
     protected void Init(IHostBuilder builder)
