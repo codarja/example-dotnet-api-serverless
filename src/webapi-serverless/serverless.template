@@ -22,7 +22,7 @@
         "FunctionName": {
           "Fn::Sub": "example-dotnet-api-serverless-webapi"
         },
-        "Handler": "webapi_serverless::webapi_serverless.Functions::FunctionHandlerAsync",
+        "Handler": "webapi-serverless::webapi_serverless.Functions::FunctionHandlerAsync",
         "Runtime": "dotnet6",
         "CodeUri": "",
         "MemorySize": 256,

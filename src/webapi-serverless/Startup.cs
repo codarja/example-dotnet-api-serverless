@@ -61,7 +61,6 @@ public class Startup
 
     #region [ Private Methods ]
     
-
     private void ConfigureSwagger(IApplicationBuilder app)
     {
         app.UseSwagger();
